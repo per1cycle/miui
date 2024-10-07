@@ -18,5 +18,5 @@ func openSqlite() (*gorm.DB, error) {
 
 func main() {
 	db, err := openSqlite()
-	
+	fmt.Println("hello", db, err)
 }
