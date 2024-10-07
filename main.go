@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
-	"log"
 
+	"github.com/per1cycle/miui/tui"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
 
 func openSqlite() (*gorm.DB, error) {
-	db, err := gorm.Open(sqlite.Open("new.db"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("miui.db"), &gorm.Config{})
 	if err != nil {
 		return db, fmt.Errorf("unable to open database: %w", err)
 	}
@@ -18,5 +18,5 @@ func openSqlite() (*gorm.DB, error) {
 
 func main() {
 	db, err := openSqlite()
-	fmt.Println("hello", db, err)
+	tui.TuiFoo()
 }
